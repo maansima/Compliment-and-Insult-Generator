@@ -61,5 +61,8 @@ app.get("/compliment", function(req, res){
 
 app.use("/public", express.static("./public"));
 
-app.listen(3000); 
+var port = process.env.PORT || 3000;
+app.listen(port, "0.0.0.0", function() {
+   console.log(`Listening on Port ${port}`);
+}); 
 console.log("listening on http://localhost:3000");
